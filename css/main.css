@@ -1,0 +1,646 @@
+/* ---------- root variables ---------- */
+:root {
+  --arlaForrestGreen: #006c3a;
+  --arlaGrassGreen: #4bb131;
+  --arlaSunYellow: #ffcc32;
+  --arlaGraniteGray: #363e42;
+  --arlaSlateGray: #7c8180;
+  --arlaStoneGray: #d1d2ce;
+  --goldMedal: #d1a535;
+  --silverMedal: #8e8c8c;
+  --bronzeMedal: #b57c46;
+  --noMedal: #E5E5E7;
+  --milkyWhite: #f9f8fa;
+  --ArlaRoyalPurple: #7D5D8A;
+  --ArlaPoppyRed: #F8353C;
+  --ArlaSkyBlue: #3cc4eb;
+
+  --gradient: linear-gradient(0deg, rgba(0, 108, 58, 0.8) 0%, rgba(17, 124, 56, 0.8) 37%, rgba(35, 141, 54, 0.8) 65%, rgba(75, 177, 49, 0.8) 100%);
+  --fontAmatic: 'Amatic SC';
+}
+
+/* ---------- Import font ---------- */
+@font-face {
+  font-family: 'Arla Regular';
+  src: url('Arla/ArlaIF_W_Rg.ttf');
+}
+
+@font-face {
+  font-family: 'Arla Italic';
+  src: url('Arla/ArlaIF_W_It.ttf');
+}
+
+@font-face {
+  font-family: 'Arla Bold';
+  src: url('Arla/ArlaIF_W_Bd.ttf');
+}
+
+/* ---------- general styling ---------- */
+html {
+  color: var(--arlaGraniteGray);
+  font-family: 'Arla Regular', Arial, sans-serif;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  font-weight: 200;
+  background-color: var(--milkyWhite);
+  background-image: url(../img/webHeader.svg);
+  background-position: fixed;
+  background-repeat: no-repeat;
+  background-size: 101%;
+}
+
+body {
+  margin: 0;
+}
+
+h1 {
+  font-family: var(--fontAmatic);
+  font-size: 3em;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+h2 {
+  font-family: var(--fontAmatic);
+  font-size: 3em;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+h3 {
+  font-family: var(--fontAmatic);
+  font-size: 1.5em;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+a {
+  text-decoration: none;
+  color: var(--light-green);
+}
+
+ul {
+  text-align: left;
+}
+
+.displayNone {
+  display: none;
+}
+
+
+/* ---------- menu styling ---------- */
+.tabbar {
+  /* background-color: var(--arlaForrestGreen); */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  font-family: var(--fontAmatic);
+
+  font-weight: bold;
+}
+
+.left {
+  float: left;
+  font-size: 1.5em;
+}
+
+.right {
+  float: right;
+  font-size: 1em;
+}
+
+/* Style the links inside the navigation bar */
+.tabbar a {
+  display: inline-block;
+  color: var(--milkyWhite);
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* Change the bottom border of links on hover */
+.tabbar a:hover {
+  border-bottom: 3px solid var(--arlaForrestGreen);
+}
+
+/* Add a bottom border to the active/current link */
+.tabbar a.active {
+  border-bottom: 3px solid var(--arlaForrestGreen);
+  color: var(--milkyWhite);
+}
+
+/* ---------- page styling ---------- */
+.page {
+  display: none;
+  /*min heigh is screen heigh minus height of tab and top bar */
+  min-height: calc(100vh - 110px);
+  background: var(--light-grey);
+  animation: fadeIn 0.4s;
+  /* padding equals height of tabbar and topbar */
+  padding: 10% 0;
+}
+
+/* ---------- Frontpage styling ---------- */
+.flexContainer {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  width: 95%;
+  max-height: 10%;
+  overflow: hidden;
+}
+
+.flexContainerAll {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 3.5em;
+}
+
+.flexItem {
+  width: 30%;
+  margin: 0;
+}
+
+.frontPageBoks1 {
+  background: var(--gradient);
+  display: block;
+  width: 19.8%;
+  height: 16em;
+}
+
+#boks4,
+#boks1 {
+  margin: 0 .1%;
+}
+
+#boks1,
+#boks2,
+#boks4,
+#boks {
+  opacity: .8;
+}
+
+.frontPageCircle {
+  background: var(--milkyWhite);
+  border-radius: 50%;
+  width: 78%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+.frontPageCircle img {
+  margin: auto;
+}
+
+#boks1 img,
+#boks2 img,
+#boks3 img,
+#boks4 img {
+  max-height: 50%;
+  margin: 2em auto 0%;
+}
+
+#frontPageTekst {
+  width: 20%;
+  margin: 2% auto;
+}
+
+.h2Home {
+  font-family: var(--fontAmatic);
+  font-size: 2em;
+  font-weight: 300;
+  letter-spacing: 3px;
+  color: var(--milkyWhite);
+}
+
+
+/* ---------- Compare data page stryling ---------- */
+#fromYear,
+#toYear {
+  border-radius: 20px;
+  background: var(--gradient);
+  color: var(--milkyWhite);
+  padding: 5px;
+  width: 70px;
+  cursor: pointer;
+}
+
+select:active {
+  outline: 0;
+}
+
+option {
+  background-color: var(--arlaForrestGreen);
+}
+
+.tabbarLand {
+  font-family: var(--fontAmatic);
+  font-weight: bold;
+  font-size: 1.7em;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#regioner {
+  border-bottom: 10px solid var(--arlaForrestGreen);
+  width: 50%;
+}
+
+#lande {
+  border-bottom: 10px solid #F2F0F0;
+  width: 50%;
+}
+
+.tabbarLand a:hover {
+  border-bottom: 3px solid var(--arlaForrestGreen);
+}
+
+.tabbarLand a.active {
+  border-bottom: 3px solid var(--arlaForrestGreen);
+  color: var(--milkyWhite);
+}
+
+#titelRegioner {
+  margin-top: 1%;
+}
+
+#timePeriod,
+#buttons {
+  display: inline;
+  margin: 0 5%;
+}
+
+#timePeriod p {
+  color: var(--arlaForrestGreen);
+  font-family: 'Arla Bold';
+  display: inline-block;
+  margin: 0 1%;
+}
+
+.btn {
+  font-weight: 200;
+  text-align: center;
+  cursor: pointer;
+  background: var(--milkyWhite);
+  width: 60px;
+  border: solid 1px var(--arlaGraniteGray);
+  border-radius: 20px;
+  font-family: var(--fontAmatic);
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+.btn img {
+  width: 50%;
+  position: absolute;
+  right: 0;
+  top: -2;
+}
+
+.img {
+  display: none;
+}
+
+.selected {
+  background: var(--gradient);
+  color: var(--milkyWhite);
+  position: relative;
+  border: none;
+}
+
+.selected img {
+  display: block;
+  position: absolute;
+  overflow: visible;
+  width: 50%;
+  top: -30%;
+  right: -15%;
+}
+
+#line {
+  height: 1px;
+  width: 70%;
+  margin: 1em auto 0;
+  background-color: var(--arlaStoneGray)
+}
+
+
+
+/* ---------- input form stryling ---------- */
+form {
+  background-color: var(--arlaGrassGreen);
+  width: 19%;
+}
+
+form button {
+  font-weight: 200;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  padding: 12px 15px;
+  font-size: 1em;
+  border-radius: 0;
+  color: var(--text-color-light);
+  background-color: var(--arlaForrestGreen);
+  width: 100%;
+  max-width: 350px;
+}
+
+/* ---------- buttom stryling ---------- */
+article button {
+  font-weight: 200;
+  text-align: center;
+  cursor: pointer;
+  border: solid 1.5px var(--arlaForrestGreen);
+  padding: 5px 0;
+  border-radius: 20px;
+  color: var(--text-color-light);
+  background-color: #ffffff;
+  width: 5%;
+}
+
+input {
+  margin: 1em auto;
+  width: 100%;
+  max-width: 350px;
+  padding: 12px 15px;
+  box-sizing: border-box;
+  display: block;
+}
+
+#inputs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+#theInputForm input {
+  width: 100%;
+}
+
+svg {
+  max-width: 100%;
+  height: 380px;
+  overflow: visible;
+}
+
+/* ---------- map ---------- */
+
+.scale {
+  width: 70px;
+  height: 10px;
+}
+
+.scaleall {
+  margin-left: 2%;
+}
+
+.scaleall p {
+  font-size: 0.7em;
+  margin: 0%;
+}
+
+#scaletitel h4 {
+  margin: 0%;
+  font-size: 0.96em;
+}
+
+#flex-scale {
+  display: flex;
+}
+
+#greyscale {
+  background-color: #DADBDA;
+}
+
+#lightgreenscale {
+  background-color: #4BB131;
+}
+
+#greenscale {
+  background-color: #2A924A;
+}
+
+#darkgreenscale {
+  background-color: #00441B;
+}
+
+.mapButtons {
+  background: var(--gradient);
+  width: 35%;
+  height: 3em;
+  color: white;
+  font-size: 0.7em;
+}
+
+.mapButtons p {
+  font-size: 0.7em;
+}
+
+#mapselection {
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--arlaSunYellow);
+  border-radius: 3px;
+  margin-right: 0.5%;
+}
+
+#mapBtns {
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  z-index: 2;
+}
+
+#mapBtns div {
+  margin: 2%;
+}
+
+#mapselectionyellow {
+  display: flex;
+  align-items: center;
+}
+
+
+#arlaflower-map {
+  width: 3%;
+  position: absolute;
+
+  top: 630px;
+  right: 30%;
+  z-index: 2;
+  display: none;
+}
+
+#arlaflower-map.show {
+  display: block;
+}
+
+/* ---------- Graph ---------- */
+
+#graphBtns-wrapper {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 1em;
+  justify-content: space-evenly;
+}
+
+.graphBtns {
+  position: relative;
+  background-color: white;
+  width: 140px;
+  height: 35px;
+  color: #006C3A;
+  font-size: 0.6em;
+  font-weight: 700;
+}
+
+.graphBtns:focus {
+  outline: 0;
+}
+
+.flower {
+  display: block;
+  position: absolute;
+  overflow: visible;
+  width: 25%;
+  top: -40%;
+  right: -11%;
+}
+
+article #chartContainer {
+  width: 50%;
+}
+
+#chartDiv {
+  width: 100%;
+}
+
+#graphTable {
+  width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 40%;
+  border-collapse: separate;
+  border: solid #dddddd 5px;
+  border-radius: 6px;
+  -moz-border-radius: 6px;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+#thFirst {
+  background-color: #707070;
+  color: white;
+}
+
+#tdFirst {
+  background-color: var(--ArlaRoyalPurple);
+  color: white;
+}
+
+#tdSecond {
+  background-color: var(--ArlaPoppyRed);
+  color: white;
+}
+
+.NordDanmark {
+  background-color: var(--ArlaRoyalPurple);
+  color: var(--milkyWhite)
+}
+
+.SydDanmark {
+  background-color: var(--ArlaPoppyRed);
+  color: var(--milkyWhite)
+}
+
+.Sjælland {
+  background-color: var(--ArlaSkyBlue);
+  color: var(--milkyWhite)
+}
+
+.DinData {
+  background-color: var(--arlaGrassGreen);
+  color: var(--milkyWhite)
+}
+
+.DanmarksData {
+  background-color: var(--arlaSunYellow);
+  color: var(--milkyWhite)
+}
+
+/* ---------- Donut Chart ---------- */
+#donutChart {
+  display: none;
+  flex-wrap: wrap;
+  width: 50%;
+}
+
+.doughnutDiv {
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+  background: transparent url(../img/cow.svg) no-repeat center 50%;
+  background-size: 20%;
+}
+
+#divChartNord,
+#divChartSyd,
+#divChartSealand {
+  width: 32%;
+  margin: 3% 0;
+}
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  text-align: center;
+  padding: 2% 8%;
+}
+
+.donutTable {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.donutTd {
+  width: 100px;
+}
+
+.tableHeadNord {
+  background-color: var(--ArlaRoyalPurple);
+  font-family: var(--fontAmatic);
+  color: var(--milkyWhite);
+}
+
+.tableHeadSyd {
+  background-color: var(--ArlaPoppyRed);
+  font-family: var(--fontAmatic);
+  color: var(--milkyWhite);
+}
+
+.tableHeadSealand {
+  background-color: #3cc4eb;
+  font-family: var(--fontAmatic);
+  color: var(--milkyWhite);
+}
